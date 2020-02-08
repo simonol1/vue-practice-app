@@ -1,21 +1,24 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <RaceFilter></RaceFilter>
+    <RaceList></RaceList>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RaceFilter from './components/RaceFilter.vue'
+import RaceList from './components/RaceList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    RaceFilter,
+    RaceList
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
