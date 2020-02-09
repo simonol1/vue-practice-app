@@ -1,7 +1,7 @@
 <template>
   <div class="race-list__container">
     <ul class="race-list">
-      <li class="race-list__item" v-for="(race,index) in races" :key="index" :class="{'greyhound': race.category_id == category_ids.greyhound, 'horse': race.category_id == category_ids.horse, 'harness': race.category_id == category_ids.harness }">
+      <li class="race-list__item" v-for="(race,index) in filterByStartTime(races)" :key="index" :class="{'greyhound': race.category_id == category_ids.greyhound, 'horse': race.category_id == category_ids.horse, 'harness': race.category_id == category_ids.harness }">
         <Race :categoryid="race.category_id" :racenumber="race.race_number" :meetingname="race.meeting_name" :starttime="race.advertised_start.seconds"></Race>
       </li>
     </ul>
@@ -36,16 +36,16 @@ export default {
       .get('https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=5')
       .then(res => {
         this.races = res.data.data.race_summaries;
-        console.log('data fetched');
+        console.log(this.races);
       }).catch(err => {
         console.log(err);
       })
   },
 
-  computed: {
-    filterByStartTime() {
-      console.log('computed')
-      return this.races.slice().sort((a, b) => { return b.advertised_start.seconds - a.advertised_start.seconds;});
+  methods: {
+    filterByStartTime(races) {
+      const upcomingRaces = Object.values(races);
+      return upcomingRaces.slice().sort((a, b) => { return a.advertised_start.seconds - b.advertised_start.seconds;});
     }
   },
 
