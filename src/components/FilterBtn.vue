@@ -4,7 +4,6 @@
 
 <script>
 
-
 export default {
   name: 'FilterBtn',
   props: ['btncategory'],
@@ -15,12 +14,10 @@ export default {
   },
 
   methods: {
-    toggleBtn(btncategory) {
+    toggleBtn() {
       this.isActive = !this.isActive;
 
-
-
-      console.log(btncategory);
+      // console.log(btncategory);
     }
   },
 }

@@ -19,11 +19,11 @@ export default {
 
   filters: {
     niceTime(value) {
-      let currTime = Math.round(new Date()/1000);
-      let secsToJump = value - currTime;
+      const currTime = Math.round(new Date()/1000);
+      const secsToJump = value - currTime;
 
       if (secsToJump > 60) {
-        let minsToJump = Math.round(secsToJump / 60);
+        const minsToJump = Math.round(secsToJump / 60);
         return minsToJump + 'm';
       } else {
         return secsToJump + 's';

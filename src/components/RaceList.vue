@@ -33,10 +33,9 @@ export default {
 
   mounted() {
     axios
-      .get('https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=5')
+      .get('https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=10')
       .then(res => {
         this.races = res.data.data.race_summaries;
-        console.log(this.races);
       }).catch(err => {
         console.log(err);
       })
@@ -45,14 +44,15 @@ export default {
   methods: {
     filterByStartTime(races) {
       const upcomingRaces = Object.values(races);
-      return upcomingRaces.slice().sort((a, b) => { return a.advertised_start.seconds - b.advertised_start.seconds;});
+      const nextFiveRaces = upcomingRaces.slice(0,5);
+      return nextFiveRaces.slice().sort((a, b) => { return a.advertised_start.seconds - b.advertised_start.seconds;});
     }
   },
 
-  watch: {
-    races: function() {
-        console.log('race data updated');
-    }
-  }
+  // watch: {
+  //   races: function() {
+  //       console.log('race data updated');
+  //   }
+  // }
 }
 </script>
