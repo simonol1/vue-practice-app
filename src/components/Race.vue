@@ -28,8 +28,7 @@ export default {
       } else {
         return secsToJump + 's';
       }
-    },
-
+    }
   }
 }
 

@@ -10,14 +10,12 @@
 <script>
 import FilterBtn from './FilterBtn.vue'
 
-
 export default {
   name: 'RaceFilter',
 
   components: {
     FilterBtn
   }
-
 }
-</script>
 
+</script>
