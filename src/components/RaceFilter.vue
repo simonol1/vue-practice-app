@@ -1,9 +1,9 @@
 <template>
   <div class="race-filter__container">
     <h4 class="race-filter__heading">Next 5 Races</h4>
-    <FilterBtn :category="'horse'"></FilterBtn>
-    <FilterBtn :category="'harness'"></FilterBtn>
-    <FilterBtn :category="'greyhound'"></FilterBtn>
+    <FilterBtn :btncategory="'horse'"></FilterBtn>
+    <FilterBtn :btncategory="'harness'"></FilterBtn>
+    <FilterBtn :btncategory="'greyhound'"></FilterBtn>
   </div>
 </template>
 

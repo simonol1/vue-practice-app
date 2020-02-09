@@ -67,9 +67,9 @@ export default {
 
       &__item {
         position: relative;
-        -moz-box-shadow:    inset 0 0 10px #c9c9c9;
+        -moz-box-shadow: inset 0 0 10px #c9c9c9;
         -webkit-box-shadow: inset 0 0 10px #c9c9c9;
-        box-shadow:         inset 0 0 10px #c9c9c9;
+        box-shadow: inset 0 0 10px #c9c9c9;
         cursor: pointer;
         padding: 5px 5px 5px 30px;
         border-bottom: 1px solid #d6d6d6;
@@ -108,6 +108,9 @@ export default {
 
 .btn {
   border: 1px solid #d6d6d6;
+  -moz-box-shadow: inset 0 0 10px #c9c9c9;
+  -webkit-box-shadow: inset 0 0 10px #c9c9c9;
+  box-shadow: inset 0 0 10px #c9c9c9;
   border-bottom: 0;
   cursor: pointer;
   height: 60px;
@@ -134,7 +137,7 @@ export default {
 
   &:hover {
     background-color: #ff7800;
-    opacity: 0.8;
+    opacity: 0.5;
   }
 }
 

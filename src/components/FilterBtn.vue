@@ -1,5 +1,5 @@
 <template>
-  <button :class="[{active: isActive}, category]" class="btn"  @click="toggleBtn(category)"></button>
+  <button :class="[{active: isActive}, btncategory]" class="btn"  @click="toggleBtn(btncategory)"></button>
 </template>
 
 <script>
@@ -7,7 +7,7 @@
 
 export default {
   name: 'FilterBtn',
-  props: ['category'],
+  props: ['btncategory'],
   data () {
     return {
       isActive: true,
@@ -15,10 +15,12 @@ export default {
   },
 
   methods: {
-    toggleBtn(category) {
+    toggleBtn(btncategory) {
       this.isActive = !this.isActive;
 
-      console.log(category);
+
+
+      console.log(btncategory);
     }
   },
 }
